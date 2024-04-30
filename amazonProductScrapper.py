@@ -10,15 +10,17 @@ import pandas as pd
 from selenium.common.exceptions import NoSuchElementException
 
 
-options = webdriver.ChromeOptions()
-options.add_experimental_option('excludeSwitches', ['enable-logging'])
-options.add_experimental_option("detach", True)
+def setUpBrowserParameters():
+    global driver
+    options = webdriver.ChromeOptions()
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    options.add_experimental_option("detach", True)
 
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+    driver.get("https://www.amazon.com/")
+    driver.maximize_window()
 
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-driver.get("https://www.amazon.com/")
-driver.maximize_window()
-
+setUpBrowserParameters()
 
 print("waiting for input...")
 x = input()
