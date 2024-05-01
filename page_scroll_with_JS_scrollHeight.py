@@ -29,7 +29,7 @@ data = []
 itemsVisited = 0
 
 # elements to be visited
-n = 70
+n = 45
 
 # old element count
 oldCount = 0
@@ -56,8 +56,10 @@ while itemsVisited < n:
         elem = driver.find_element(By.CSS_SELECTOR, "div.box:nth-of-type("+str(x+1)+")").get_attribute('textContent')
         print(elem)
         data.append(str(elem))
+        itemsVisited = itemsVisited + 1
+        if itemsVisited >= n:
+            break
     
-    itemsVisited = newCount
     oldCount = newCount
 
 
