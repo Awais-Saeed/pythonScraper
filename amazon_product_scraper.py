@@ -77,7 +77,7 @@ while isRun:
     # filter for only iPhone 13
     for i in items:
         # if "iphone 13" in i.text.lower() and "case" not in i.text.lower():
-        if "iphone 13" in i.text.lower() and not any(x in i.text.lower() for x in ['case','charger','cable','holder','accessory','accessories']):
+        if "iphone 13" in i.text.lower() and not any(x in i.text.lower() for x in ['case','charger','cable','holder','accessory','accessories','replacement','speaker','dummy','protector']):
             print(str(count) + "]")
             print(i.text + "\n")
             href = i.get_attribute("href")
