@@ -51,10 +51,10 @@ for i in destinations:
 driver.find_element(By.XPATH, "//span[@class='a-button a-button-primary']/span[@class='a-button-inner']").click()
 
 
-# Search iPhone 13
+# Search iPhone 12
 time.sleep(3)
 elemID3 = "//input[@id='twotabsearchtextbox']"
-WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, elemID3))).send_keys("iPhone 13")
+WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, elemID3))).send_keys("iPhone 12")
 
 
 # hit search btn
@@ -74,10 +74,10 @@ while isRun:
     original_window = driver.current_window_handle
 
 
-    # filter for only iPhone 13
+    # filter for only iPhone 12
     for i in items:
-        # if "iphone 13" in i.text.lower() and "case" not in i.text.lower():
-        if "iphone 13" in i.text.lower() and not any(x in i.text.lower() for x in ['case','charger','cable','holder','accessory','accessories','replacement','speaker','dummy','protector']):
+        # if "iphone 12" in i.text.lower() and "case" not in i.text.lower():
+        if "iphone 12" in i.text.lower() and not any(x in i.text.lower() for x in ['case','charger','cable','holder','accessory','accessories','replacement','speaker','dummy','protector']):
             print(str(count) + "]")
             print(i.text + "\n")
             href = i.get_attribute("href")
