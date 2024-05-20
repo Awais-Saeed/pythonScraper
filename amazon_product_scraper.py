@@ -133,7 +133,7 @@ while isRun:
     # find the Next Button (with Explicit wait) to tackle pagination
     elem = "//*[contains(@class,'s-pagination-next')]"
     WebDriverWait(driver, 50).until(EC.element_to_be_clickable((By.XPATH, elem)))
-    nextBtn = driver.find_element(By.XPATH, "//*[contains(@class,'s-pagination-next')]")
+    nextBtn = driver.find_element(By.XPATH, elem)
     nextBtnAttribute = nextBtn.get_attribute("aria-disabled")
 
 
