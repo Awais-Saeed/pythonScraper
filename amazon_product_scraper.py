@@ -15,10 +15,10 @@ def setUpBrowserParameters():
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
     options.add_experimental_option("detach", True)
+    options.add_argument("--start-maximized")
 
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+    driver = webdriver.Chrome(options=options)
     driver.get("https://www.amazon.com/")
-    driver.maximize_window()
 
 setUpBrowserParameters()
 
